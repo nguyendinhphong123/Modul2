@@ -1,3 +1,22 @@
+<?php
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $chuoi = "nguyenvanteo";
+        $count = 0;
+        $dem = $_REQUEST['phong'];
+        for($i = 0; $i < strlen($chuoi); $i++){
+            if($dem == $chuoi[$i]){
+                $count += 1;
+            }
+        }
+        echo $count;
+     }
+        
+    
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,18 +26,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="" method="POST">
+        <input type="text" name="phong" id="" placeholder="Nhập ký tự">
+        <input type="submit" value="Kiểm tra">
+    </form>
 </body>
 </html>
-<?php
-    $dem = "nguyendinhphong";
-    $n = "n";
-    $count = 0;
-    for($i = 0; $i < strlen($dem); $i++){
-        if($n == $dem[$i]){
-            $count += 1;
-        }
-    }
-    echo $count;
-
-?>
